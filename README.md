@@ -258,3 +258,21 @@ Always validate on **Xahau Testnet** before mainnet:
 - `request.c` triggers on the user's outgoing payments; it does not poll. If the user never
   transacts, no top-up is requested even if the balance is low.
 - Both hooks export a trivial `cbak` (no reaction to emitted-transaction outcomes).
+
+---
+
+## Disclaimer
+
+This software and documentation are provided **"as is", without warranty of any kind**,
+express or implied, including but not limited to the warranties of merchantability, fitness
+for a particular purpose and non-infringement.
+
+These hooks move real funds on the Xahau ledger. **Use them at your own risk.** The author
+and maintainers of this repository accept **no responsibility or liability** for any errors,
+bugs, loss of funds, unintended top-ups, misconfiguration, downtime, or any other direct or
+indirect damages arising from the use of this code, the published WASM, or these
+instructions.
+
+Always **review the source, audit the compiled hooks, and test thoroughly on Xahau Testnet**
+before deploying to Mainnet. You are solely responsible for verifying behaviour, parameters
+and amounts on your own accounts.
