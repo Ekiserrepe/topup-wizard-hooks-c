@@ -17,6 +17,10 @@ When the user spends XAH and their balance drops below a minimum they defined, t
 hook checks that the requester is whitelisted and below its own threshold, then emits a
 `Payment` back to the user. The whole cycle happens on-ledger, with no off-chain bot.
 
+> 🧙 **Web Wizard:** <https://topup.xahau.love/> — a guided web app to install and configure
+> these hooks (set parameters, manage the whitelist) without crafting the transactions by
+> hand. Recommended for most users.
+
 ---
 
 ## How the pair works
@@ -151,7 +155,14 @@ Both hooks ship with their `cbak` export (required by Xahau, otherwise `SetHook`
 with `temMALFORMED`). Because the definitions already exist on both networks, install **by
 hash reference** — no WASM upload, no `CreateCode`.
 
-### Install by HookHash (recommended)
+### Easiest: the Web Wizard
+
+The simplest way to install and configure both hooks is the web app:
+**<https://topup.xahau.love/>**. It walks you through `SetHook`, encodes the parameters for
+you and lets you manage the treasury whitelist — no manual transaction building required.
+The manual steps below are for those who prefer to build the transactions themselves.
+
+### Install by HookHash (manual)
 
 Submit a `SetHook` transaction from each account referencing the published hash. Conceptual
 shape of the `Hook` object:
